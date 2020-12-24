@@ -1,2 +1,13 @@
- <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="/static/CSS/style.css" type="text/css"/>
+this task
+
+&lt;nav class="navbar navbar-dark bg-dark flex-md-nowrap p-1" th:fragment="navbar"&gt;
+    &lt;span class="navbar-brand col-sm"&gt;
+        &lt;strong th:text="${loggedInUser.email}"&gt;&lt;/strong&gt; with roles:
+        &lt;span th:each="loggedInUserRole : ${loggedInUser.roles}" th:text="${loggedInUserRole.role} + ' '"&gt;&lt;/span&gt;
+    &lt;/span&gt;
+    &lt;ul class="navbar-nav px-3"&gt;
+        &lt;li class="nav-item text-nowrap"&gt;
+            &lt;a class="nav-link" href="/sign-out" th:href="@{/sign-out}"&gt;Logout&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;

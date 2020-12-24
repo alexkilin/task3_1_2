@@ -15,22 +15,19 @@
 <div class="container-fluid">
 
 
-    <div class="row">
 
-        <div class="col-md-11" style="color:white; background-color: black">
-                <ul class="nav">
-                <strong class="text-left" th:text="${currentuser.email}"></strong>
-                <normal th:text="' with roles: ' + ${rolesDTO}"></normal>
-                </ul>
-            </div>
+        <nav class="navbar navbar-dark bg-dark flex-md-nowrap p-1" th:fragment="navbar">
+        <span class="navbar-brand col-sm">
+        <strong th:text="${currentuser.email}"></strong> with roles:
+        <span th:text="${rolesDTO}"></span>
+        </span>
+        <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+        <a class="nav-link" href="/sign-out" th:href="@{/sign-out}">Logout</a>
+        </li>
+        </ul>
+        </nav>
 
-            <div class="col-md-1" style="color:white; background-color: black">
-                <ul class="nav">
-                    <a  class="text-right" style="color:white; background-color: black" href="/logout">Logout</a>
-                </ul>
-            </div>
-
-    </div>
 
     <div class="row">
         <div class="col-md-2" >
@@ -100,8 +97,6 @@
                                                     <div class="row">
                                                         <div class="col-md-3" ></div>
                                                         <div class="col-md-6" >
-
-
                                                         <div class="form-group">
                                                             <div class="text-center">
                                                                 <label class="font-weight-bold text-center" th:for="id"   >ID</label>
@@ -154,11 +149,7 @@
                                                                 <option value="ROLE_USER" >USER</option>
                                                                 <option value="ROLE_USER_ADMIN" >USER&ADMIN</option>
                                                             </select>
-
-
                                                         <div class="col-md-3" ></div>
-
-
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
@@ -167,16 +158,10 @@
 
                                                     </div>
                                                 </form>
-
-
-
-                                                    </div>
-                                        </div>
+                                            </div>
                                         </div>
                                     </div>
-
-
-
+                                </div>
                             </td>
                             <td>
                                 <a class="btn btn-danger" th:href="'/admin/delete/'+${user.id}" th:text="Delete"  role="button">Delete</a>
